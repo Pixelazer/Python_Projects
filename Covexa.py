@@ -10,12 +10,12 @@ chrome_path="C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 webbrowser.register('chrome', None,webbrowser.BackgroundBrowser(chrome_path))
 
 dialogues = {"a": "It is a new virus, tramsmitted to humans by bats.",
-             "b": "Quarantine yourselves if having symptoms or if you are in a city with any reported cases.",
+             "b": "Quarantine yourself if having symptoms or if you are in a city with any reported cases.",
              "c": 'Covid-19 transmits through mucous droplets while sneezing or coughing.',
-             'd': "Wuhan, Hubei Province, China",
+             'd': "Coronavirus originated in Wuhan, Hubei Province, China.",
              'e': "Symptoms of Coronavirus include cough, fever, chills, headache, tiredness, and trouble breathing.",
              'f': "Use alcohol-based hand sanitizer and rub thoroughly after coming in contact with any object which could be contaminated.",
-             'g': "For regular updates on Covid-19 from the World Health Organization, Send 'hi' to +4 1, 7 9 8, 9 3 1, 8 9 2 on WhatsApp"}
+             'g': "For regular updates on Covid-19 from the World Health Organization, Send 'hi' to + 4 1, 7 9 8, 9 3 1, 8 9 2 on WhatsApp."}
 
 def speech_init(): # Initialises Speech Output
     engine.setProperty('rate', 150)
