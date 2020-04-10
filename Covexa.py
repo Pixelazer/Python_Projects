@@ -15,7 +15,7 @@ dialogues = {"a": "It is a new virus, tramsmitted to humans by bats.",
              'd': "Wuhan, Hubei Province, China",
              'e': "Symptoms of Coronavirus include cough, fever, chills, headache, tiredness, and trouble breathing.",
              'f': "Use alcohol-based hand sanitizer and rub thoroughly after coming in contact with any object which could be contaminated.",
-             'g': "For regular updates on Covid-19 from the World Health Organization, Send 'hi' to +41 798931892 on WhatsApp"}
+             'g': "For regular updates on Covid-19 from the World Health Organization, Send 'hi' to +4 1, 7 9 8, 9 3 1, 8 9 2 on WhatsApp"}
 
 def speech_init(): # Initialises Speech Output
     engine.setProperty('rate', 150)
@@ -77,6 +77,8 @@ while running:
         userinp = input("Enter your question ").lower()
         
     if "updates" in userinp:
+        x = dialogues['g']
+        speech_output(x)
         b = "https://www.who.int"
         open_website(b)
         userinp = input("Enter your question ").lower()
