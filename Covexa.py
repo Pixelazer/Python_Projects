@@ -1,5 +1,5 @@
 '''
-Covexa 2.3
+Covexa 1.4
 '''
 
 import pyttsx3
