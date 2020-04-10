@@ -1,3 +1,6 @@
+'''
+Covexa 2.3
+'''
 
 import pyttsx3
 import webbrowser
@@ -6,18 +9,22 @@ import webbrowser
 engine = pyttsx3.init()
 running = True
 
+# Registering chrome
 chrome_path="C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
-webbrowser.register('chrome', None,webbrowser.BackgroundBrowser(chrome_path))
+webbrowser.register('chrome', None, webbrowser.BackgroundBrowser(chrome_path))
 
+# Dictionary of Covexa's responses
 dialogues = {"a": "It is a new virus, tramsmitted to humans by bats.",
              "b": "Quarantine yourself if having symptoms or if you are in a city with any reported cases.",
              "c": 'Covid-19 transmits through mucous droplets while sneezing or coughing.',
              'd': "Coronavirus originated in Wuhan, Hubei Province, China.",
              'e': "Symptoms of Coronavirus include cough, fever, chills, headache, tiredness, and trouble breathing.",
              'f': "Use alcohol-based hand sanitizer and rub thoroughly after coming in contact with any object which could be contaminated.",
-             'g': "For regular updates on Covid-19 from the World Health Organization, Send 'hi' to + 4 1, 7 9 8, 9 3 1, 8 9 2 on WhatsApp."}
+             'g': "For regular updates on Covid-19 from the World Health Organization, Send 'hi' to + 4 1, 7 9 8, 9 3 1, 8 9 2 on WhatsApp.",
+             'z': "Hope you are well. Goodbye"}
 
-def speech_init(): # Initialises Speech Output
+# Initialises Speech Output
+def speech_init(): 
     engine.setProperty('rate', 150)
     engine.setProperty('volume' , 2)
     voices = engine.getPropertyvoices = engine.getProperty('voices')  
@@ -27,7 +34,7 @@ def speech_output(x):
     engine.say(x)
     engine.runAndWait()
 
-def open_website(a): # Function To open Webbrowser
+def open_website(a):
     c = webbrowser.get('Chrome')
     c.open_new_tab(a)
 
@@ -37,6 +44,7 @@ def open_website(a): # Function To open Webbrowser
     
 speech_init()
 
+# Startup
 print("I am Covexa, your Coronavirus HelpBot")
 x = "I am covexa, your coronavirus help bot"
 speech_output(x)
@@ -46,6 +54,7 @@ speech_output(x)
 print("To exit enter Z")  
 userinp = input("Enter your question ").lower()
 
+# Function that will run Covexa until user exits
 while running:
     
     if "corona" or "covid" in userinp:
@@ -91,6 +100,7 @@ while running:
     if "z" in userinp:
         running = False
 
-x = "Hope you are well"
+# Covexa will say this after exiting the while loop
+x = dialogues['z']
 speech_output(x)
 print("See you later")  
