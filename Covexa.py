@@ -23,8 +23,7 @@ dialogues = {"a": "It is a new virus, tramsmitted to humans by bats.",
              'f': "Use alcohol-based hand sanitizer and rub thoroughly after coming in contact with any object which could be contaminated.",
              'g': "For regular updates on Covid-19 from the World Health Organization, Send 'hi' to + 4 1, 7 9 8, 9 3 1, 8 9 2 on WhatsApp.",
              'h': "Symptoms include coughing, sneezing, difficulty breathing, and pneumonia.",
-             'z': "Hope you are well. Goodbye",
-             '?': "I don't konw the answer to that question."}
+             'z': "Hope you are well. Goodbye"}
 
 # Initialises Speech Output
 def speech_init(): 
@@ -58,8 +57,8 @@ print("To exit enter Z")
 userinp = input("Enter your question ").lower()
 
 # Function that will run Covexa until user exits
-while running:   
-    if "corona" or "covid-19" or 'covid 19' in userinp:
+while running:
+    if "corona" in userinp:
         x = dialogues['a']
         speech_output(x)
         x = dialogues['h']
@@ -94,7 +93,7 @@ while running:
     if "updates" in userinp:
         x = dialogues['g']
         speech_output(x)
-        b = "https://who.sprinklr.com/"
+        b = "https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6"
         open_website(b)
         userinp = input("Enter your question ").lower()
     
@@ -105,10 +104,6 @@ while running:
         
     if "z" in userinp:
         running = False
-
-    if '' in userinp:
-        x = dialogues["?"]
-        speech_output(x)
 
 # Covexa will say this after exiting the while loop
 x = dialogues['z']
